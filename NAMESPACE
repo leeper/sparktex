@@ -1,0 +1,2 @@
+# 2013-06-06
+exportPattern("^[[:alpha:]]+")

@@ -1,0 +1,11 @@
+Package: sparktex
+Version: 0.1
+Date: 2013-06-06
+Title: Generate LaTeX sparklines in R
+Authors@R: c(person("Thomas", "Leeper", role = c("aut", "cre"),
+					email = "thosjleeper@gmail.com"),
+					person("Andy", "Barbour", role = "ctb"))
+Depends: R (>= 3.0.0)
+Description: Generate syntax for use with the sparklines package for LaTeX.
+License: GPL-2
+URL: http://thomasleeper.com/software.html
