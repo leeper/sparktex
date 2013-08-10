@@ -8,4 +8,5 @@ Authors@R: c(person("Thomas", "Leeper", role = c("aut", "cre"),
 Depends: R (>= 3.0.0)
 Description: Generate syntax for use with the sparklines package for LaTeX.
 License: GPL-2
-URL: http://thomasleeper.com/software.html
+URL: https://github.com/leeper/sparktex
+BugReports: https://github.com/leeper/sparktex/issues
