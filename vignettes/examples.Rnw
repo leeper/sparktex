@@ -1,0 +1,274 @@
+\documentclass{article}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{verbatim}
+\usepackage{sparklines}
+
+\title{sparktex Examples}
+
+\SweaveOpts{echo=true, keep.source=TRUE}
+%\VignetteIndexEntry{Examples}
+
+\begin{document}
+
+\maketitle
+
+\noindent This document demonstrates the \LaTeX results of the \verb|sparktex| examples used in the package's R documentation.\\
+
+\noindent\textbf{Data used for sparklines:}
+<<vals>>=
+library(sparktex)
+vals <- sin(seq(1:10))
+@
+
+\noindent\textbf{Basic sparkline:}
+\renewcommand{\sparklineheight}{1.75}
+\begin{sparkline}{10}
+\spark
+ 0.0864 0.841470984807897
+ 0.1783 0.909297426825682
+ 0.2702 0.141120008059867
+ 0.3621 -0.756802495307928
+ 0.454 -0.958924274663138
+ 0.546 -0.279415498198926
+ 0.6379 0.656986598718789
+ 0.7298 0.989358246623382
+ 0.8217 0.412118485241757
+ 0.9136 -0.54402111088937 / 
+\end{sparkline}
+
+<<ex1>>=
+<<vals>>
+sparktex(vals)
+@
+
+
+\noindent\textbf{A wider sparkline:}
+\renewcommand{\sparklineheight}{1.75}
+\begin{sparkline}{40}
+\spark
+ 0.0864 0.841470984807897
+ 0.1783 0.909297426825682
+ 0.2702 0.141120008059867
+ 0.3621 -0.756802495307928
+ 0.454 -0.958924274663138
+ 0.546 -0.279415498198926
+ 0.6379 0.656986598718789
+ 0.7298 0.989358246623382
+ 0.8217 0.412118485241757
+ 0.9136 -0.54402111088937 / 
+\end{sparkline}
+
+<<ex2>>=
+<<vals>>
+sparktex(vals, width=40)
+@
+
+\noindent\textbf{A thicker sparkline:}
+{\setlength{\sparklinethickness}{3px}
+\renewcommand{\sparklineheight}{1.75}
+\begin{sparkline}{10}
+\spark
+ 0.0864 0.841470984807897
+ 0.1783 0.909297426825682
+ 0.2702 0.141120008059867
+ 0.3621 -0.756802495307928
+ 0.454 -0.958924274663138
+ 0.546 -0.279415498198926
+ 0.6379 0.656986598718789
+ 0.7298 0.989358246623382
+ 0.8217 0.412118485241757
+ 0.9136 -0.54402111088937 / 
+\end{sparkline}}
+
+<<ex3>>=
+<<vals>>
+sparktex(vals, linewidth='3px')
+@
+
+
+\noindent\textbf{A sparkspike/barplot:}
+\renewcommand{\sparklineheight}{1.75}
+\begin{sparkline}{10}
+\sparkspike  0.0864 0.841470984807897 
+\sparkspike  0.1783 0.909297426825682 
+\sparkspike  0.2702 0.141120008059867 
+\sparkspike  0.3621 -0.756802495307928 
+\sparkspike  0.454 -0.958924274663138 
+\sparkspike  0.546 -0.279415498198926 
+\sparkspike  0.6379 0.656986598718789 
+\sparkspike  0.7298 0.989358246623382 
+\sparkspike  0.8217 0.412118485241757 
+\sparkspike  0.9136 -0.54402111088937 
+\end{sparkline}
+
+<<ex5>>=
+<<vals>>
+sparktex(vals, type="sparkspike")
+@
+
+
+\noindent\textbf{Constrain y to (0,1):}
+\renewcommand{\sparklineheight}{1.75}
+\begin{sparkline}{10}
+\spark
+ 0.0864 0.850522
+ 0.1783 0.919078
+ 0.2702 0.142638
+ 0.3621 -0.764943
+ 0.454 -0.969239
+ 0.546 -0.282421
+ 0.6379 0.664053
+ 0.7298 1
+ 0.8217 0.416551
+ 0.9136 -0.549873 / 
+\end{sparkline}
+
+<<ex6>>=
+<<vals>>
+sparktex(vals, normalize=TRUE)
+@
+
+
+\noindent\textbf{Constrain the sparkline to LaTeX line height:}
+\renewcommand{\sparklineheight}{1}
+\begin{sparkline}{10}
+\spark
+ 0.0864 0.841470984807897
+ 0.1783 0.909297426825682
+ 0.2702 0.141120008059867
+ 0.3621 -0.756802495307928
+ 0.454 -0.958924274663138
+ 0.546 -0.279415498198926
+ 0.6379 0.656986598718789
+ 0.7298 0.989358246623382
+ 0.8217 0.412118485241757
+ 0.9136 -0.54402111088937 / 
+\end{sparkline}
+
+<<ex7>>=
+<<vals>>
+sparktex(vals, height=1)
+@
+
+
+\noindent\textbf{A gray background:}
+\renewcommand{\sparklineheight}{1.75}
+\begin{sparkline}{10}
+\definecolor{sparkrectanglecolor}{gray}{0.9}
+\sparkrectangle 1 2 
+\spark
+ 0.0864 0.841470984807897
+ 0.1783 0.909297426825682
+ 0.2702 0.141120008059867
+ 0.3621 -0.756802495307928
+ 0.454 -0.958924274663138
+ 0.546 -0.279415498198926
+ 0.6379 0.656986598718789
+ 0.7298 0.989358246623382
+ 0.8217 0.412118485241757
+ 0.9136 -0.54402111088937 / 
+\end{sparkline}
+
+<<ex8>>=
+<<vals>>
+sparktex(vals, rectangle=c(1,2))
+@
+
+
+\noindent\textbf{A colored background:}
+\renewcommand{\sparklineheight}{1.75}
+\begin{sparkline}{10}
+\definecolor{sparkrectanglecolor}{rgb}{0.5,0.7,0.3}
+\sparkrectangle 1 2 
+\spark
+ 0.0864 0.841470984807897
+ 0.1783 0.909297426825682
+ 0.2702 0.141120008059867
+ 0.3621 -0.756802495307928
+ 0.454 -0.958924274663138
+ 0.546 -0.279415498198926
+ 0.6379 0.656986598718789
+ 0.7298 0.989358246623382
+ 0.8217 0.412118485241757
+ 0.9136 -0.54402111088937 / 
+\end{sparkline}
+
+<<ex9>>=
+<<vals>>
+sparktex(vals, rectangle=c(1,2,"rgb","0.5,0.7,0.3"))
+@
+
+
+\noindent\textbf{Two colored background rectangles:}
+\renewcommand{\sparklineheight}{1.75}
+\begin{sparkline}{10}
+\definecolor{sparkrectanglecolor}{rgb}{0.5,0.7,0.3}
+\sparkrectangle 1 2 
+\definecolor{sparkrectanglecolor}{rgb}{0.2,0.7,0.3}
+\sparkrectangle -1 0 
+\spark
+ 0.0864 0.841470984807897
+ 0.1783 0.909297426825682
+ 0.2702 0.141120008059867
+ 0.3621 -0.756802495307928
+ 0.454 -0.958924274663138
+ 0.546 -0.279415498198926
+ 0.6379 0.656986598718789
+ 0.7298 0.989358246623382
+ 0.8217 0.412118485241757
+ 0.9136 -0.54402111088937 / 
+\end{sparkline}
+
+<<ex10>>=
+<<vals>>
+sparktex(vals, rectangle=list(c(1,2,"rgb","0.5,0.7,0.3"), c(-1,0,"rgb","0.2,0.7,0.3")))
+@
+
+
+\noindent\textbf{A sparkline with start and end points:}
+\renewcommand{\sparklineheight}{1.75}
+\begin{sparkline}{10}
+\spark
+ 0.0864 0.841470984807897
+ 0.1783 0.909297426825682
+ 0.2702 0.141120008059867
+ 0.3621 -0.756802495307928
+ 0.454 -0.958924274663138
+ 0.546 -0.279415498198926
+ 0.6379 0.656986598718789
+ 0.7298 0.989358246623382
+ 0.8217 0.412118485241757
+ 0.9136 -0.54402111088937 / 
+\sparkdot 0.0864 0.841470984807897 blue 
+\sparkdot 0.9136 -0.54402111088937 red 
+\end{sparkline}
+
+<<ex11>>=
+<<vals>>
+sparktex(vals, sparkdot=list(c(0.0864,sin(1),"blue"), c(0.9136,sin(10),"red")))
+@
+
+
+\noindent\textbf{A thick purple sparkline:}
+\definecolor{sparklinecolor}{named}{purple}{\setlength{\sparklinethickness}{2px}
+\renewcommand{\sparklineheight}{1.75}
+\begin{sparkline}{10}
+\spark
+ 0.0864 0.850522
+ 0.1783 0.919078
+ 0.2702 0.142638
+ 0.3621 -0.764943
+ 0.454 -0.969239
+ 0.546 -0.282421
+ 0.6379 0.664053
+ 0.7298 1
+ 0.8217 0.416551
+ 0.9136 -0.549873 / 
+\end{sparkline}}
+
+<<ex12>>=
+<<vals>>
+sparktex(vals, linewidth='2px', normalize=TRUE, color=c("named","purple"))
+@
+
+\end{document}
