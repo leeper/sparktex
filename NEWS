@@ -1,3 +1,9 @@
+# CHANGES TO sparktex 0.2 #
+
+## BUG FIXES ##
+
+* Changed `linewidth` argument to accept user-specified units .(#1)
+
 # CHANGES TO sparktex 0.1 #
 
 * First version released

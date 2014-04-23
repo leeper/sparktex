@@ -1,6 +1,6 @@
 Package: sparktex
-Version: 0.1
-Date: 2013-06-06
+Version: 0.1.1
+Date: 2014-04-23
 Title: Generate LaTeX sparklines in R
 Authors@R: c(person("Thomas", "Leeper", role = c("aut", "cre"),
 					email = "thosjleeper@gmail.com"),

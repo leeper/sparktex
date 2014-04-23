@@ -38,7 +38,7 @@ sparktex <- function(y, x=NULL, height=1.75, width=NULL,
 		tex <- paste0("{\\setlength{\\", type, 
 					  switch(type, 
 							 sparkline="thickness", 
-							 sparkspike="width"), "}{",linewidth, "px}\n")
+							 sparkspike="width"), "}{",linewidth, "}\n")
 		alltex <- c(alltex,tex)
 	}
 
