@@ -4,4 +4,6 @@ The **sparktex** package, [available on CRAN](http://cran.r-project.org/web/pack
 
 The package can produce both sparklines and "sparkspikes" (sparkline-like barplots) that can be placed directly as in-line text or in table and figure environments. The display of these plots is highly customizable and the package documentation includes numerous examples.
 
-Note: Due to dependency on the sparklines LaTeX package, **sparktex** can only produce output for pdflatex.
+Note: Due to dependency on the sparklines LaTeX package, **sparktex** can only produce output for PDF output.
+
+[![Build Status](https://travis-ci.org/leeper/sparktex.svg?branch=master)](https://travis-ci.org/leeper/sparktex)
