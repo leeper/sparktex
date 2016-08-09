@@ -1,2 +1,12 @@
 language: r
-sudo: required
+sudo: false
+cache: packages
+- covr
+after_failure:
+  email: 
+    recipients:
+     - thosjleeper@gmail.com
+    on_success: change
+    on_failure: change
+after_success:
+- Rscript -e 'library("covr");codecov()'
