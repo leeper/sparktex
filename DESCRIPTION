@@ -2,9 +2,11 @@ Package: sparktex
 Version: 0.1.1
 Date: 2014-04-23
 Title: Generate LaTeX sparklines in R
-Authors@R: c(person("Thomas J.", "Leeper", role = c("aut", "cre"),
-					email = "thosjleeper@gmail.com"),
-					person("Andy", "Barbour", role = "ctb"))
+Authors@R: c(person("Thomas J.", "Leeper",
+                    role = c("aut", "cre"), 
+                    email = "thosjleeper@gmail.com",
+                    comment = c(ORCID = "0000-0003-4097-6326")),
+             person("Andy", "Barbour", role = "ctb"))
 Depends: R (>= 3.0.0)
 Description: Generate syntax for use with the sparklines package for LaTeX.
 License: GPL-2
